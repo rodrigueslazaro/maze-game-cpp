@@ -5,11 +5,7 @@ class MazeGame {
 public:
     MazeGame(){};
 
-    void CreateMaze();
-    void CreateMazeFactoryMethod();
-    void CreateMazeAbstractFactory();
-    void CreateMazeBuilder();
-    void CreateMazePrototype();
+    void CreateMaze(MazeFactory& factory);
 private:
     Maze* _maze;
 };
