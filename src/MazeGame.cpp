@@ -1,8 +1,5 @@
 #include "MazeGame.h"
 #include "MazeFactory.h"
-#include "Door.h"
-#include "Wall.h"
-#include "Room.h"
 
 void MazeGame::CreateMaze(MazeFactory& factory) {
 
