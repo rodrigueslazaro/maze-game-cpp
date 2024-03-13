@@ -1,25 +1,12 @@
 #include "MazeGame.h"
-#include "MazeFactory.h"
+#include "MazeBuilder.h"
 
-void MazeGame::CreateMaze(MazeFactory& factory) {
-
-    Maze* aMaze = factory.MakeMaze();
-    Room* r1 = factory.MakeRoom(1);
-    Room* r2 = factory.MakeRoom(2);
-    Door* theDoor = factory.MakeDoor(r1, r2);
+void MazeGame::CreateMaze(MazeBuilder& builder) {
+    builder.BuildMaze();
     
-    aMaze->AddRoom(r1);
-    aMaze->AddRoom(r2);
+    builder.BuildRoom(1);
+    builder.BuildRoom(2);
+    builder.BuildDoor(1,2);
 
-    r1->SetSide(North, factory.MakeWall());
-    r1->SetSide(East, theDoor);
-    r1->SetSide(South, factory.MakeWall());
-    r1->SetSide(West, factory.MakeWall());
-
-    r2->SetSide(North, factory.MakeWall());
-    r2->SetSide(East, factory.MakeWall());
-    r2->SetSide(South, factory.MakeWall());
-    r2->SetSide(West, theDoor);
-
-    _maze = aMaze;
+    _maze = builder.GetMaze();
 }

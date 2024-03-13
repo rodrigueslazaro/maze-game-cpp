@@ -1,12 +1,12 @@
 #include "MazeGame.h"
-#include "MazeFactory.h"
+#include "SimpleMazeBuilder.h"
 #include <iostream>
 using namespace std;
 
 int main() {
     MazeGame game;
-    MazeFactory factory;
-    game.CreateMaze(factory);
+    SimpleMazeBuilder builder;
+    game.CreateMaze(builder);
     cout << "Maze created successfully!" << endl;
     return 0;
 }

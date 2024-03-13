@@ -1,12 +1,12 @@
 #include "Maze.h"
-#include "MazeFactory.h"
+#include "MazeBuilder.h"
 #pragma once
 
 class MazeGame {
 public:
     MazeGame(){};
 
-    void CreateMaze(MazeFactory& factory);
+    void CreateMaze(MazeBuilder& factory);
 private:
     Maze* _maze;
 };
